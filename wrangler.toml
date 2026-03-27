@@ -1,7 +1,3 @@
 name = "dutch-flash"
 compatibility_date = "2024-01-01"
-main = ".svelte-kit/cloudflare/_worker.js"
-
-[assets]
-directory = ".svelte-kit/cloudflare"
-binding = "ASSETS"
+pages_build_output_dir = ".svelte-kit/cloudflare"
