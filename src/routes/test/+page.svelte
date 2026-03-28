@@ -305,6 +305,7 @@
     padding: 1rem;
     gap: 1.5rem;
     background: var(--color-bg);
+    overflow-x: hidden;
   }
 
   .session-header {
@@ -351,13 +352,14 @@
   .card {
     width: 100%;
     max-width: 560px;
+    box-sizing: border-box;
     background: var(--color-surface);
     border-radius: 20px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 2.5rem 2rem 2rem;
+    padding: 2.5rem 1.25rem 1.5rem;
     border: 2px solid transparent;
     transition:
       border-color 0.2s,
@@ -382,9 +384,10 @@
   }
 
   .english {
-    font-size: 2.4rem;
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
     font-weight: 700;
     color: var(--color-text);
+    word-break: break-word;
   }
 
   .hint {
@@ -434,6 +437,7 @@
     cursor: pointer;
     transition: opacity 0.15s;
     white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .submit-btn:disabled {
@@ -493,6 +497,18 @@
 
   .skip-btn:hover { color: var(--color-text); border-color: var(--color-text); }
 
+  @media (max-width: 480px) {
+    .input-row {
+      flex-direction: column;
+    }
+    .submit-btn {
+      width: 100%;
+    }
+    .skip-btn {
+      width: 100%;
+    }
+  }
+
   .next-btn {
     padding: 0.85rem;
     border: none;
@@ -504,6 +520,7 @@
     font-family: inherit;
     cursor: pointer;
     transition: opacity 0.15s;
+    width: 100%;
   }
 
   .next-btn:hover {
